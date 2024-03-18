@@ -8,16 +8,28 @@ function myFunction() {
   }
 }
 
-const elements = document.querySelectorAll('hover');
+function watchForHover() {
+  // lastTouchTime is used for ignoring emulated mousemove events
+  let lastTouchTime = 0
 
-elements.forEach((element) => {
-  // Add touchstart event listener
-  element.addEventListener('touchstart', () => {
-    element.classList.add('touch-hover-effect');
-  });
+  function enableHover() {
+    if (new Date() - lastTouchTime < 500) return
+    document.body.classList.add('hasHover')
+  }
 
-  element.addEventListener('touchend', () => {
-    // Remove touch effect
-    element.classList.remove('touch-hover-effect');
-  });
-});
+  function disableHover() {
+    document.body.classList.remove('hasHover')
+  }
+
+  function updateLastTouchTime() {
+    lastTouchTime = new Date()
+  }
+
+  document.addEventListener('touchstart', updateLastTouchTime, true)
+  document.addEventListener('touchstart', disableHover, true)
+  document.addEventListener('mousemove', enableHover, true)
+
+  enableHover()
+}
+
+watchForHover()
