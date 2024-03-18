@@ -47,7 +47,7 @@
     transition: all 300ms ease-in-out;
   
     .card-img {
-      visibility: hidden;
+      visibility: visible;
       width: 100%;
       height: var(--card-img-height);
       background-repeat: no-repeat;
