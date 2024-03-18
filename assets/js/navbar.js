@@ -25,7 +25,6 @@ function watchForHover() {
     lastTouchTime = new Date()
   }
 
-  document.addEventListener('touchstart', updateLastTouchTime, true)
   document.addEventListener('touchstart', disableHover, true)
   document.addEventListener('mousemove', enableHover, true)
 
