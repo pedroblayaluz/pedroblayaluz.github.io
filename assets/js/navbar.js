@@ -8,7 +8,7 @@ function myFunction() {
   }
 }
 
-const elements = document.querySelectorAll('.hover-effect');
+const elements = document.querySelectorAll('hover');
 
 elements.forEach((element) => {
   // Add touchstart event listener
