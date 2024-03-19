@@ -12,6 +12,10 @@
     gtag('config', 'G-YGNLG9HTHM');
     </script>
     <title>mapa</title>
+	<meta property="og:title" content="pedroluz" />
+	<meta property="og:url" content="https://pedroluz.com.br/pages/mapa" />
+	<meta property="og:image" content="../images/og.jpg" />
+	<meta property="og:description" content="Mapa 🗺️" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="shortcut icon" href="../assets/favicons/favicon.ico" type="image/x-icon">
