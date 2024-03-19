@@ -33,20 +33,20 @@
         <div class="dropbtn">arte
         </div>
         <div class="dropdown-content">
-            <a href="musica.html">música</a>
-            <a href="poesia.html">poesia</a>
-            <a href="videoclipes.html">videoclipes</a>
+            <a href="musica">música</a>
+            <a href="poesia">poesia</a>
+            <a href="videoclipes">videoclipes</a>
         </div>
     </div>
     <div class="dropdown">
         <div class="dropbtn">estrada
         </div>
         <div class="dropdown-content">
-            <a href="blog.html">blog</a>
-            <a href="mapa.html">mapa</a>
+            <a href="blog">blog</a>
+            <a href="mapa">mapa</a>
         </div>
     </div>
-    <a href="acompanhe.html">me acompanhe</a>
+    <a href="acompanhe">me acompanhe</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()" style="text-align:center;">
         menu
         <i class="fa fa-bars" , style="padding: 5px;float: right;"></i>
