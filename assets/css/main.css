@@ -8069,7 +8069,7 @@ input, select, textarea {
 		-ms-justify-content: center;
 		justify-content: center;
 		position: relative;
-		background-color: #f4f4f4;
+		background-color: #ffffff;
 		position: absolute; top: 10;
 		height: 100%; width: 100%;
 	}
