@@ -3617,6 +3617,10 @@ input, select, textarea {
 			text-align: right;
 		}
 
+		.banner.style1.content-align-left {
+			text-align: left;
+		}
+
 			@media screen and (orientation: portrait) {
 
 				.banner.style1.content-align-right {
