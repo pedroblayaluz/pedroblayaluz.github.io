@@ -4,59 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Page</title>
+    <link rel="icon" href="assets/icons/pedroluz.ico" sizes="any">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/icons/pedroluz.ico">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div id="sidebar-toggle" class="sidebar-toggle">
+    <header class="topbar">
+        <h2><img src="assets/icons/pedroluz.ico" alt="" class="brand-icon">pedroluz</h2>
+        <div id="menu-toggle" class="burger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <h2>Menu</h2>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#" class="section-toggle">Section 1</a>
-                        <ul class="subsection">
-                            <li><a href="#">Subsection 1.1</a></li>
-                            <li><a href="#">Subsection 1.2</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="section-toggle">Section 2</a>
-                        <ul class="subsection">
-                            <li><a href="#">Subsection 2.1</a></li>
-                            <li><a href="#">Subsection 2.2</a></li>
-                            <li><a href="#">Subsection 2.3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="section-toggle">Section 3</a>
-                        <ul class="subsection">
-                            <li><a href="#">Subsection 3.1</a></li>
-                        </ul>
-                    </li>
+    </header>
+    <nav class="menu" id="top-menu">
+        <ul>
+            <li>
+                <a href="#" class="section-toggle">arte</a>
+                <ul class="subsection">
+                    <li><a href="musica.html">música</a></li>
+                    <li><a href="#">poesia</a></li>
                 </ul>
-            </nav>
-        </aside>
-        <main class="content">
-            <div class="content-block">Block 1</div>
-            <div class="content-block">Block 2</div>
-            <div class="content-block">Block 3</div>
-            <div class="content-block">Block 4</div>
-            <div class="content-block">Block 5</div>
-            <div class="content-block">Block 6</div>
-        </main>
-    </div>
+            </li>
+            <li>
+                <a href="#" class="section-toggle">código</a>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main class="content">
+        <div class="content-block">Block 1</div>
+        <div class="content-block">Block 2</div>
+        <div class="content-block">Block 3</div>
+        <div class="content-block">Block 4</div>
+        <div class="content-block">Block 5</div>
+        <div class="content-block">Block 6</div>
+    </main>
     <script src="js/script.js"></script>
 </body>
 </html>
