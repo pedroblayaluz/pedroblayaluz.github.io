@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Page</title>
+    <title>Poesias - pedroluz</title>
     <link rel="icon" href="assets/icons/pedroluz.ico" sizes="any">
     <link rel="shortcut icon" type="image/x-icon" href="assets/icons/pedroluz.ico">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/poesias.css">
+    <script defer src="js/poesias.js"></script>
+    <script defer src="js/script.js"></script>
 </head>
 <body>
     <header class="topbar">
@@ -33,13 +36,19 @@
         </ul>
     </nav>
     <main class="content">
-        <div class="content-block">Block 1</div>
-        <div class="content-block">Block 2</div>
-        <div class="content-block">Block 3</div>
-        <div class="content-block">Block 4</div>
-        <div class="content-block">Block 5</div>
-        <div class="content-block">Block 6</div>
+        <div class="content-block title-block">
+            <h2 style="color: #6b629d;">Poesia</h2>
+            <hr class="content-divider">
+        </div>
     </main>
-    <script src="js/script.js"></script>
+    <div id="poesias-grid">
+        <!-- Poems will be loaded dynamically via JavaScript -->
+    </div>
+
+    <!-- Popup for full-size image -->
+    <div id="image-popup" class="popup">
+        <span class="close-popup">&times;</span>
+        <img id="popup-image" src="" alt="Poesia em tamanho completo">
+    </div>
 </body>
 </html>
