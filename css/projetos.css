@@ -56,18 +56,23 @@
 
 /* Project detail page styles */
 .project-detail {
+    grid-column: 1 / -1;  /* Make it span all columns */
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(138, 92, 255, 0.147);
-    padding: 30px;
-    margin-top: 20px;
+    padding: 10px 30px 30px 30px;
+}
+
+.project-detail h2 {
+    color: #6b629d;
+    margin-bottom: 20px;
+    font-weight: 350;
 }
 
 .project-detail h2 {
     color: #6b629d;
     margin-bottom: 20px;
 }
-
 .project-detail p {
     color: #666;
     line-height: 1.6;

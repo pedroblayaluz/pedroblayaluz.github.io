@@ -40,16 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = document.createElement('img');
         img.src = `../../assets/images/poesias/${poesia}`;
         img.alt = poesia.replace('.png', '').replace('.jpg', '').replace('.gif', '');
-        
+        img.className = 'image-thumb';
         poesiaItem.appendChild(img);
         poesiasGrid.appendChild(poesiaItem);
-
-        // Add click event for popup
-        poesiaItem.addEventListener('click', () => {
-            popupImg.src = img.src;
-            popupImg.alt = img.alt;
-            popup.style.display = 'block';
-        });
     });
 
     // Close popup when clicking X button
