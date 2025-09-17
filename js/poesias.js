@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         poesiaItem.className = 'poesia-item';
         
         const img = document.createElement('img');
-        img.src = `assets/images/poesias/${poesia}`;
+        img.src = `../../assets/images/poesias/${poesia}`;
         img.alt = poesia.replace('.png', '').replace('.jpg', '').replace('.gif', '');
         
         poesiaItem.appendChild(img);
