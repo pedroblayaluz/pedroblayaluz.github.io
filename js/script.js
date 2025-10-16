@@ -21,3 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Redirect rule: if the current path is under /pages/arte/lps or /pages/lps, send to musica
+(function(){
+    try {
+        var p = location.pathname.replace(/\/+/g, '/');
+        if (/^\/pages(?:\/arte)?\/lps(?:$|\/)/i.test(p)) {
+            var target = '/pages/arte/musica.html';
+            if (p !== target) location.replace(target);
+        }
+    } catch (e) {
+        // no-op
+    }
+})();
