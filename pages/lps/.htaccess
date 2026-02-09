@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /pages/lps/
+  
+  # Redirecionar todas as requisições de LP individuais para lp.html
+  # Mantém a URL amigável enquanto serve lp.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([a-zA-Z0-9]+)\.html$ lp.html [QSA,L]
+</IfModule>

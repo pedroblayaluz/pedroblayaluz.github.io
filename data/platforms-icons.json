@@ -1,0 +1,24 @@
+{
+  "platforms": {
+    "deezer": {
+      "name": "Deezer",
+      "icon": "https://www.deezer.com/static/images/favicon-192x192-v2.png",
+      "baseUrl": "https://www.deezer.com/artist/"
+    },
+    "spotify": {
+      "name": "Spotify",
+      "icon": "https://www.spotify.com/favicon.ico",
+      "baseUrl": "https://open.spotify.com/artist/"
+    },
+    "applemusic": {
+      "name": "Apple Music",
+      "icon": "https://www.apple.com/favicon.ico",
+      "baseUrl": "https://music.apple.com/artist/"
+    },
+    "amazonmusic": {
+      "name": "Amazon Music",
+      "icon": "https://music.amazon.com/favicon.ico",
+      "baseUrl": "https://music.amazon.com/artists/"
+    }
+  }
+}
