@@ -5,6 +5,7 @@ import { LayoutWrapper } from "@/components/LayoutWrapper";
 export const metadata: Metadata = {
   title: "pedroluz",
   description: "Música, poesia, código e histórias.",
+  metadataBase: new URL('https://pedroluz.com'),
   openGraph: {
     title: "pedroluz",
     description: "Música, poesia, código e histórias.",
