@@ -1,13 +1,15 @@
 'use client';
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaSpotify, FaYoutube, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
 import { LightningAnimation, SnowflakesAnimation, ContentSlider, MusicTimeline, PoetryGrid, ProjectsGrid } from "@/components";
 
 export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,32 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
+      if (
+        headerRef.current?.contains(target) ||
+        navRef.current?.contains(target)
+      ) {
+        return; // click was inside header or nav, ignore
+      }
+      setMobileMenuOpen(false);
+    };
+
+    // Use timeout so the opening click doesn't immediately close
+    const timer = setTimeout(() => {
+      document.addEventListener("click", handleClickOutside);
+    }, 0);
+
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   // Menu hover handlers (avoid inline complex expressions in JSX)
   const handleMenuEnter = (e: React.MouseEvent<HTMLElement>) => {
@@ -32,6 +60,7 @@ export default function Home() {
     <>
       {/* Navbar - appears on scroll */}
       <header 
+        ref={headerRef}
         className={`fixed top-0 left-0 right-0 h-14 bg-white flex items-center px-4 shadow-sm transition-opacity duration-300 cursor-pointer ${
           showNavbar ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
@@ -59,12 +88,13 @@ export default function Home() {
       </header>
 
       {/* Menu */}
-      <nav className={`fixed top-14 left-0 right-0 bg-white shadow-sm transition-opacity duration-300 ${mobileMenuOpen && showNavbar ? 'block' : 'hidden'}`} style={{ zIndex: 9998 }}>
+      <nav ref={navRef} className={`fixed top-14 left-0 right-0 bg-white shadow-sm transition-opacity duration-300 ${mobileMenuOpen && showNavbar ? 'block' : 'hidden'}`} style={{ zIndex: 9998 }}>
         <ul className="list-none p-2 m-0 space-y-1">
-          <li><a href="#home" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave}>página inicial</a></li>
-          <li><a href="#musica" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave}>música</a></li>
-          <li><a href="#poesia" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave}>poesia</a></li>
-          <li><a href="https://blaya.ia.br" target="_blank" rel="noopener noreferrer" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave}>software</a></li>
+          <li><a href="#home" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>página inicial</a></li>
+          <li><a href="#arte" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>arte</a></li>
+          <li><a href="#musica" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>música</a></li>
+          <li><a href="#poesia" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>poesia</a></li>
+          <li><a href="https://blaya.ia.br" target="_blank" rel="noopener noreferrer" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>software</a></li>
         </ul>
       </nav>
 
