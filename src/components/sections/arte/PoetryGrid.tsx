@@ -33,6 +33,11 @@ export function PoetryGrid() {
       >
         {POETRY_DATA.map((poetry, index) => {
           const poetryName = poetry.filename.replace(/\.[^.]+$/, '');
+          const isGif = poetry.filename.toLowerCase().endsWith('.gif');
+          const thumbSrc = isGif 
+            ? `/optimized/poesias/${poetry.filename}`
+            : `/optimized/poesias/${poetryName}-thumb.jpg`;
+          
           return (
             <div
               key={index}
@@ -48,11 +53,12 @@ export function PoetryGrid() {
               {...cardHandlers}
             >
               <Image
-                src={`/optimized/poesias/${poetryName}-thumb.jpg`}
+                src={thumbSrc}
                 alt={poetry.title}
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                unoptimized={isGif}
               />
             </div>
           );
@@ -64,16 +70,38 @@ export function PoetryGrid() {
         isOpen={!!selectedPoetry}
         onClose={() => setSelectedPoetry(null)}
         closeButtonVariant="dark"
+        contentStyle={{
+          padding: 0,
+          boxShadow: 'none',
+          borderRadius: 0,
+          overflow: 'hidden',
+          maxWidth: '95vw',
+          maxHeight: '95vh',
+        }}
       >
-        {selectedPoetry && (
-          <Image
-            src={`/optimized/poesias/${selectedPoetry.filename.replace(/\.[^.]+$/, '')}-full.jpg`}
-            alt={selectedPoetry.title}
-            width={800}
-            height={800}
-            style={{ width: '100%', height: 'auto', display: 'block' }}
-          />
-        )}
+        {selectedPoetry && (() => {
+          const isGif = selectedPoetry.filename.toLowerCase().endsWith('.gif');
+          const fullSrc = isGif
+            ? `/optimized/poesias/${selectedPoetry.filename}`
+            : `/optimized/poesias/${selectedPoetry.filename.replace(/\.[^.]+$/, '')}-full.jpg`;
+          
+          return (
+            <Image
+              src={fullSrc}
+              alt={selectedPoetry.title}
+              width={800}
+              height={800}
+              style={{ 
+                width: '100%',
+                height: 'auto',
+                maxWidth: '95vw',
+                maxHeight: '95vh',
+                objectFit: 'contain'
+              }}
+              unoptimized={isGif}
+            />
+          );
+        })()}
       </GenericModal>
     </>
   );

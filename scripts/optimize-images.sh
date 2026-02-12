@@ -40,9 +40,10 @@ for poesia in "$PROJECT_ROOT"/public/poesias/*; do
     extension="${filename##*.}"
     basename="${filename%.*}"
     
-    # Skip .gif files
+    # GIFs são copiados como-estão (sem otimização)
     if [ "$extension" = "gif" ]; then
-        echo "  ⊘ $filename (GIF preservado)"
+        cp "$poesia" "$OPTIMIZED_DIR/poesias/${filename}"
+        echo "  ✓ $filename (GIF copiado como-está)"
         continue
     fi
     
