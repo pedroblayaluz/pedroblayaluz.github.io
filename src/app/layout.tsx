@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Metadata } from "next";
-import { LayoutWrapper } from "@/components/LayoutWrapper";
+import { LayoutWrapper } from "@/components/common/layouts";
 
 export const metadata: Metadata = {
   title: "pedroluz",

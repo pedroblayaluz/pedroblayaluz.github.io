@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { GenericModal } from '@/components/ui/GenericModal';
+import { GenericModal } from '@/components/common/ui';
 import { POETRY_DATA, Poetry } from '@/lib/data';
 import { STYLES } from '@/lib/styles/tokens';
 import { useHoverEffect } from '@/hooks/useHoverEffect';

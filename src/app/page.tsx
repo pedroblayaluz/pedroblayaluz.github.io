@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { FaSpotify, FaYoutube, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
-import { LightningAnimation, SnowflakesAnimation, ContentSlider, MusicTimeline, PoetryGrid, ProjectsGrid } from "@/components";
+import { LightningAnimation, SnowflakesAnimation, ContentSlider, MusicTimeline, PoetryGrid, ProjectsGrid, ScrollNavigation } from "@/components";
 
 export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);

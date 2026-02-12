@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { LPMetadata } from '@/lib/lps-metadata';
 import { FaSpotify, FaYoutube, FaInstagram, FaTiktok, FaLinkedin, FaGithub, FaApple, FaAmazon } from "react-icons/fa";
-import { DecoratedPageLayout } from './DecoratedPageLayout';
+import { DecoratedPageLayout } from '@/components/common/layouts';
 
 interface LPPageProps {
   lp: LPMetadata;

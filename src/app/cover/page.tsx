@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { createMetadata } from "@/lib/metadata";
-import { PortfolioContent } from "@/components/PortfolioContent";
+import { CoverContent } from "@/components/sections/cover";
 
 export const metadata: Metadata = createMetadata(
   "Portfólio",
@@ -8,6 +8,6 @@ export const metadata: Metadata = createMetadata(
   "/pedroluz.ico"
 );
 
-export default function PortfolioPage() {
-  return <PortfolioContent />;
+export default function CoverPage() {
+  return <CoverContent />;
 }

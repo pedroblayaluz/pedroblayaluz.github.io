@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { getLPBySlug, getAllLPSlugs } from '@/lib/lps-metadata';
-import { LPPage } from '@/components/layouts';
+import { LPPage } from '@/components/sections/lps';
 
 interface LPPageParams {
   slug: string;

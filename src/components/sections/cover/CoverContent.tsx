@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { FaSpotify, FaYoutube, FaInstagram, FaTiktok } from "react-icons/fa";
-import { DecoratedPageLayout } from '@/components/layouts';
+import { DecoratedPageLayout } from '@/components/common/layouts';
 
-export function PortfolioContent() {
+export function CoverContent() {
   return (
     <DecoratedPageLayout>
       {/* Hero Section */}

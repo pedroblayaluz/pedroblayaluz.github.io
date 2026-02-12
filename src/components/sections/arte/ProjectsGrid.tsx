@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { GenericModal } from '@/components/ui/GenericModal';
+import { GenericModal } from '@/components/common/ui';
 import { PROJECTS_DATA, Project } from '@/lib/data';
 import { STYLES } from '@/lib/styles/tokens';
 import { useHoverEffect } from '@/hooks/useHoverEffect';
