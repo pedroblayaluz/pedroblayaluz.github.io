@@ -5,11 +5,6 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://pedroluz.com";
 export const defaultMetadata: Metadata = {
   title: "pedroluz",
   description: "Música, poesia, código e histórias.",
-  icons: {
-    icon: "/pedroluz.ico",
-    shortcut: "/pedroluz.ico",
-    apple: "/pedroluz.ico",
-  },
 };
 
 export function createMetadata(
@@ -22,11 +17,6 @@ export function createMetadata(
   return {
     title: `${title} | pedroluz`,
     description,
-    icons: {
-      icon: "/pedroluz.ico",
-      shortcut: "/pedroluz.ico",
-      apple: "/pedroluz.ico",
-    },
     openGraph: {
       title: `${title} | pedroluz`,
       description,

@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
+import { LAYERS } from "@/lib/layerConfig";
 
 interface Lightning {
   id: number;
@@ -84,7 +85,7 @@ export const LightningAnimation = () => {
         svgContainer.style.width = "100%";
         svgContainer.style.height = "100%";
         svgContainer.style.pointerEvents = "none";
-        svgContainer.style.zIndex = "1";
+        svgContainer.style.zIndex = String(LAYERS.DECORATIONS);
         svgContainer.id = `lightning-container-${lightning.id}-${Date.now()}`;
 
         // Add defs
@@ -298,7 +299,7 @@ export const LightningAnimation = () => {
         flashDiv.style.position = "fixed";
         flashDiv.style.inset = "0";
         flashDiv.style.pointerEvents = "none";
-        flashDiv.style.zIndex = "1";
+        flashDiv.style.zIndex = String(LAYERS.DECORATIONS);
         flashDiv.style.background = `radial-gradient(ellipse at ${randomX * 100}% ${randomY * 100}%, rgba(168, 85, 247, 0.2), transparent 60%)`;
         flashDiv.style.mixBlendMode = "overlay";
 

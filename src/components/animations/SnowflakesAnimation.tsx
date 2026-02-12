@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { LAYERS } from "@/lib/layerConfig";
 
 interface Snowflake {
   id: number;
@@ -25,7 +26,7 @@ export const SnowflakesAnimation = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: LAYERS.DECORATIONS }}>
       <style>{`
         @keyframes snowfall {
           0% {

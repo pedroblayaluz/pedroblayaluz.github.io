@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { getLPBySlug, getAllLPSlugs } from '@/lib/lps-metadata';
-import { LPPage } from '@/components/LPPage';
+import { LPPage } from '@/components/layouts';
 
 interface LPPageParams {
   slug: string;
@@ -31,7 +31,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${lp.title} ${lp.emoji}`,
       description: lp.description,
-      url: `https://pedroluz.com.br/pages/lps/${lp.slug}`,
+      url: `https://pedroluz.com.br/lps/${lp.slug}`,
       images: [
         {
           url: lp.image,

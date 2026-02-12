@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { LPMetadata } from '@/lib/lps-metadata';
 import { FaSpotify, FaYoutube, FaInstagram, FaTiktok, FaLinkedin, FaGithub, FaApple, FaAmazon } from "react-icons/fa";
-import { LightningAnimation, SnowflakesAnimation } from '@/components';
+import { DecoratedPageLayout } from './DecoratedPageLayout';
 
 interface LPPageProps {
   lp: LPMetadata;
@@ -12,54 +12,8 @@ interface LPPageProps {
 
 export function LPPage({ lp }: LPPageProps) {
   return (
-    <>
-      <div style={{ backgroundColor: lp.backgroundColor || '#f7f1ff', minHeight: '100vh' }}>
-        {/* Animations and Decorative Elements */}
-        <div style={{ position: 'relative', zIndex: 0 }}>
-          <LightningAnimation />
-          <SnowflakesAnimation />
-
-          {/* Mountains Background - Fixed */}
-          <div 
-            className="fixed bottom-0 left-0 right-0 pointer-events-none"
-            style={{
-              width: '100%',
-              height: '600px',
-              zIndex: 0
-            }}
-          >
-            <Image
-              src="/mountains.png"
-              alt="Mountains"
-              width={1920}
-              height={600}
-              priority
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center 0%'
-              }}
-              className="hidden md:block"
-            />
-            <Image
-              src="/mountains.png"
-              alt="Mountains"
-              width={1920}
-              height={600}
-              priority
-              style={{
-                width: '200%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'left 0%'
-              }}
-              className="block md:hidden"
-            />
-          </div>
-
-          {/* Content */}
-          <main style={{ maxWidth: '600px', margin: '0 auto', padding: '40px 20px', position: 'relative', zIndex: 100 }}>
+    <DecoratedPageLayout backgroundColor={lp.backgroundColor || '#f7f1ff'}>
+      <main style={{ maxWidth: '600px', margin: '0 auto', padding: '40px 20px', position: 'relative' }}>
             {/* Listen on all platforms */}
             <div
               style={{
@@ -323,9 +277,7 @@ export function LPPage({ lp }: LPPageProps) {
 
             {/* Padding for mountains */}
             <div style={{ height: '400px' }} />
-          </main>
-        </div>
-      </div>
-    </>
+      </main>
+    </DecoratedPageLayout>
   );
 }

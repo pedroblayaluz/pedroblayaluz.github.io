@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { LAYERS } from "@/lib/layerConfig";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -41,7 +42,7 @@ export const Navbar = () => {
       <header
         ref={headerRef}
         className="fixed top-0 left-0 right-0 h-14 bg-white flex items-center px-4 shadow-sm cursor-pointer"
-        style={{ fontWeight: 350, zIndex: 1001 }}
+        style={{ fontWeight: 350, zIndex: LAYERS.NAVBAR }}
         onClick={() => setMobileMenuOpen((v) => !v)}
       >
         <h2
@@ -80,7 +81,7 @@ export const Navbar = () => {
       <nav
         ref={navRef}
         className={`fixed top-14 left-0 right-0 bg-white shadow-sm ${mobileMenuOpen ? "block" : "hidden"}`}
-        style={{ zIndex: 1000 }}
+        style={{ zIndex: LAYERS.MENU_DROPDOWN }}
       >
         <ul className="list-none p-2 m-0 space-y-1">
           <li>

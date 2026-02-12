@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Redirect old LP routes to new location
+      {
+        source: '/pages/lps/:slug',
+        destination: '/lps/:slug',
+        permanent: true, // 301 redirect (permanent)
+      },
+    ];
+  },
 };
 
 export default nextConfig;

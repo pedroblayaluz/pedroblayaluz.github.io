@@ -69,7 +69,7 @@ export function ScrollNavigation() {
 
       // Navigate after animation
       setTimeout(() => {
-        router.push('/main');
+        router.push('/portfolio');
       }, 500);
     };
 

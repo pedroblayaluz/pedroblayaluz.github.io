@@ -5,11 +5,6 @@ import { LayoutWrapper } from "@/components/LayoutWrapper";
 export const metadata: Metadata = {
   title: "pedroluz",
   description: "Música, poesia, código e histórias.",
-  icons: {
-    icon: "/pedroluz.ico",
-    shortcut: "/pedroluz.ico",
-    apple: "/pedroluz.ico",
-  },
   openGraph: {
     title: "pedroluz",
     description: "Música, poesia, código e histórias.",
@@ -42,9 +37,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="icon" type="image/x-icon" href="/pedroluz.ico" />
-        <link rel="shortcut icon" href="/pedroluz.ico" />
-        <link rel="apple-touch-icon" href="/pedroluz.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
         className="antialiased text-gray-900"

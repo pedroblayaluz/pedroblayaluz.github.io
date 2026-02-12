@@ -1,10 +1,19 @@
-export { Navbar } from "./Navbar";
-export { SnowflakesAnimation } from "./SnowflakesAnimation";
-export { CloudsAnimation } from "./CloudsAnimation";
-export { LightningAnimation } from "./LightningAnimation";
-export { NameCard } from "./NameCard";
-export { MusicTimeline } from "./MusicTimeline";
-export { ContentSlider } from "./ContentSlider";
-export { PoetryGrid } from "./PoetryGrid";
-export { ProjectsGrid } from "./ProjectsGrid";
-export { LPPage } from "./LPPage";
+// Layouts
+export { DecoratedPageLayout, LPPage } from './layouts';
+
+// UI Components
+export { CloseButton, GenericModal, Navbar, NameCard } from './ui';
+
+// Gallery Components
+export { PoetryGrid, ProjectsGrid } from './gallery';
+
+// Animations
+export { CloudsAnimation, LightningAnimation, SnowflakesAnimation } from './animations';
+
+// Sliders
+export { ContentSlider, MusicTimeline } from './sliders';
+
+// Other components (keep in components root for now)
+export { PortfolioContent } from './PortfolioContent';
+export { ScrollNavigation } from './ScrollNavigation';
+export { LayoutWrapper } from './LayoutWrapper';

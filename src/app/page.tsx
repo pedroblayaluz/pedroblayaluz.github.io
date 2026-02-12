@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { FaSpotify, FaYoutube, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
-import { LightningAnimation, SnowflakesAnimation, ContentSlider } from "@/components";
+import { LightningAnimation, SnowflakesAnimation, ContentSlider, MusicTimeline, PoetryGrid, ProjectsGrid } from "@/components";
 
 export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -137,7 +137,7 @@ export default function Home() {
             `}</style>
 
             {/* Profile Section - Top */}
-            <section className="px-4 pt-16 md:pt-20 pb-8">
+            <section className="px-4 md:px-8 lg:px-16 pt-16 md:pt-20 pb-8">
               <div className="max-w-2xl mx-auto">
                 <div className="flex items-center gap-4 justify-center">
                   <div 
@@ -163,8 +163,8 @@ export default function Home() {
             </section>
 
             {/* Buttons Section - Middle */}
-            <section className="px-4 py-24 pb-8">
-              <div className="max-w-sm md:max-w-2xl mx-auto">
+            <section className="px-4 md:px-8 lg:px-16 py-16 md:py-24 pb-12">
+              <div className="max-w-3xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Arte Button */}
                   <a
@@ -232,8 +232,8 @@ export default function Home() {
             </section>
 
             {/* Socials Section */}
-            <section className="px-4 py-12 pb-12">
-              <div className="max-w-sm mx-auto">
+            <section className="px-4 md:px-8 lg:px-16 py-12 pb-20">
+              <div className="max-w-2xl mx-auto">
                 <div 
                   className="p-8 md:p-10 rounded-lg hover:shadow-xl transition-shadow duration-300"
                   style={{
@@ -356,17 +356,31 @@ export default function Home() {
           {/* Content - relative z-index so it appears on top */}
           <div style={{ position: 'relative', zIndex: 50 }}>
             {/* Hero Section */}
-            <section className="min-h-[calc(100vh-56px)] flex items-center justify-center relative overflow-hidden px-1 py-8">
+            <section className="min-h-[calc(100vh-56px)] flex items-center justify-center relative overflow-hidden px-4 md:px-8 lg:px-16 py-8">
               <div className="relative z-10 w-full">
                 {/* Content Slider */}
-                <ContentSlider />
+                <ContentSlider>
+                  <ContentSlider.Title />
+                  <ContentSlider.Track />
+                  <ContentSlider.Content>
+                    <ContentSlider.Panel id="musica">
+                      <MusicTimeline />
+                    </ContentSlider.Panel>
+                    <ContentSlider.Panel id="poesia">
+                      <PoetryGrid />
+                    </ContentSlider.Panel>
+                    <ContentSlider.Panel id="outros">
+                      <ProjectsGrid />
+                    </ContentSlider.Panel>
+                  </ContentSlider.Content>
+                </ContentSlider>
               </div>
             </section>
           </div>
         </div>
 
         {/* SECTION 3: Poesia */}
-        <div id="poesia" className="min-h-screen text-gray-900 relative overflow-x-hidden" style={{ backgroundColor: '#f7f1ff', scrollMarginTop: '3.5rem' }}>
+        <div id="poesia" className="text-gray-900 relative overflow-x-hidden" style={{ backgroundColor: '#f7f1ff', scrollMarginTop: '3.5rem' }}>
           {/* Mountains Background - Fixed */}
           <div 
             className="fixed bottom-0 left-0 right-0 pointer-events-none"
@@ -410,11 +424,10 @@ export default function Home() {
           {/* Content - relative z-index so it appears on top */}
           <div style={{ position: 'relative', zIndex: 50 }}>
             {/* Hero Section */}
-            <section className="min-h-[calc(100vh-56px)] flex items-center justify-center relative overflow-hidden px-4 py-20">
+            <section className="flex items-center justify-center relative overflow-hidden px-4 md:px-8 lg:px-16 py-8">
               <div className="relative z-10 max-w-6xl mx-auto w-full">
                 
                 {/* Poesia content will go here */}
-                <div style={{ minHeight: '200px' }}></div>
               </div>
             </section>
           </div>
