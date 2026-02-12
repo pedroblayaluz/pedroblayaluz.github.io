@@ -32,12 +32,13 @@ export default function Home() {
     <>
       {/* Navbar - appears on scroll */}
       <header 
-        className={`fixed top-0 left-0 right-0 h-14 bg-white flex items-center px-4 shadow-sm transition-opacity duration-300 ${
+        className={`fixed top-0 left-0 right-0 h-14 bg-white flex items-center px-4 shadow-sm transition-opacity duration-300 cursor-pointer ${
           showNavbar ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         style={{ fontWeight: 350, zIndex: 9999 }}
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
-        <h2 className="m-0 text-lg text-gray-900 flex items-center gap-2" style={{ fontWeight: 350 }}>
+        <h2 className="m-0 text-lg text-gray-900 flex items-center gap-2" style={{ fontWeight: 350, pointerEvents: 'none' }}>
           <div className="w-5 h-5 flex-shrink-0">
             <Image
               src="/pedroluz.ico"
@@ -49,15 +50,12 @@ export default function Home() {
           <span>pedroluz</span>
         </h2>
 
-        {/* Burger Menu Button */}
-        <button
-          className="flex flex-col gap-1.5 ml-auto cursor-pointer border-0 bg-transparent p-0"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
+        {/* Burger Menu Button - visual only */}
+        <div className="flex flex-col gap-1.5 ml-auto pointer-events-none">
           <span className={`block w-7 h-0.5 transition-all ${mobileMenuOpen ? 'translate-y-2 rotate-45' : ''}`} style={{ backgroundColor: '#a397eb' }}></span>
           <span className={`block w-7 h-0.5 transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`} style={{ backgroundColor: '#a397eb' }}></span>
           <span className={`block w-7 h-0.5 transition-all ${mobileMenuOpen ? '-translate-y-2 -rotate-45' : ''}`} style={{ backgroundColor: '#a397eb' }}></span>
-        </button>
+        </div>
       </header>
 
       {/* Menu */}
