@@ -75,7 +75,7 @@ export function ProjectsGrid() {
               }}
             >
               <Image
-                src={project.image}
+                src={`/optimized/projetos/${project.id}/${project.image.split('/').pop()?.replace(/\.[^.]+$/, '')}-opt.jpg`}
                 alt={project.title}
                 fill
                 style={{

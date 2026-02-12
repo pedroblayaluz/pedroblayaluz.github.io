@@ -27,11 +27,12 @@ export function LPPage({ lp }: LPPageProps) {
               {/* Album Image */}
               <div style={{ marginBottom: '30px', borderRadius: '12px', overflow: 'hidden', height: '300px', position: 'relative' }}>
                 <Image
-                  src={lp.image}
+                  src={`/optimized/albums/${lp.slug}-full.jpg`}
                   alt={lp.title}
                   fill
                   style={{ objectFit: 'cover' }}
                   priority
+                  sizes="(max-width: 640px) 90vw, 600px"
                   onError={(e) => {
                     const target = e.currentTarget as HTMLImageElement;
                     target.style.display = 'none';

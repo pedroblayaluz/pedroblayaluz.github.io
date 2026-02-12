@@ -31,29 +31,32 @@ export function PoetryGrid() {
           maxWidth: '600px',
         }}
       >
-        {POETRY_DATA.map((poetry, index) => (
-          <div
-            key={index}
-            onClick={() => setSelectedPoetry(poetry)}
-            style={{
-              position: 'relative',
-              overflow: 'hidden',
-              borderRadius: STYLES.borderRadius.small,
-              cursor: 'pointer',
-              aspectRatio: '1',
-              ...getCardStyle(),
-            }}
-            {...cardHandlers}
-          >
-            <Image
-              src={`/poesias/${poetry.filename}`}
-              alt={poetry.title}
-              fill
-              style={{ objectFit: 'cover' }}
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            />
-          </div>
-        ))}
+        {POETRY_DATA.map((poetry, index) => {
+          const poetryName = poetry.filename.replace(/\.[^.]+$/, '');
+          return (
+            <div
+              key={index}
+              onClick={() => setSelectedPoetry(poetry)}
+              style={{
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: STYLES.borderRadius.small,
+                cursor: 'pointer',
+                aspectRatio: '1',
+                ...getCardStyle(),
+              }}
+              {...cardHandlers}
+            >
+              <Image
+                src={`/optimized/poesias/${poetryName}-thumb.jpg`}
+                alt={poetry.title}
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              />
+            </div>
+          );
+        })}
       </div>
 
       {/* Reusable modal */}
@@ -64,7 +67,7 @@ export function PoetryGrid() {
       >
         {selectedPoetry && (
           <Image
-            src={`/poesias/${selectedPoetry.filename}`}
+            src={`/optimized/poesias/${selectedPoetry.filename.replace(/\.[^.]+$/, '')}-full.jpg`}
             alt={selectedPoetry.title}
             width={800}
             height={800}

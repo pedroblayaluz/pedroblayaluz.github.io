@@ -115,7 +115,7 @@ export default function Home() {
             }}
           >
             <Image
-              src="/mountains.png"
+              src="/optimized/mountains-desktop.jpg"
               alt="Mountains"
               width={1920}
               height={600}
@@ -127,21 +127,23 @@ export default function Home() {
                 objectPosition: 'center 0%'
               }}
               className="hidden md:block"
+              sizes="100vw"
             />
-            {/* Mobile: Show only left half */}
+            {/* Mobile: Use mobile-optimized version */}
             <Image
-              src="/mountains.png"
+              src="/optimized/mountains-mobile.jpg"
               alt="Mountains"
-              width={1920}
-              height={600}
+              width={1280}
+              height={400}
               priority
               style={{
-                width: '200%',
+                width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: 'left 0%'
+                objectPosition: 'center 0%'
               }}
               className="block md:hidden"
+              sizes="100vw"
             />
           </div>
 
@@ -351,7 +353,7 @@ export default function Home() {
             }}
           >
             <Image
-              src="/mountains.png"
+              src="/optimized/mountains-desktop.jpg"
               alt="Mountains"
               width={1920}
               height={600}
@@ -363,21 +365,23 @@ export default function Home() {
                 objectPosition: 'center 0%'
               }}
               className="hidden md:block"
+              sizes="100vw"
             />
-            {/* Mobile: Show only left half */}
+            {/* Mobile: Use mobile-optimized version */}
             <Image
-              src="/mountains.png"
+              src="/optimized/mountains-mobile.jpg"
               alt="Mountains"
-              width={1920}
-              height={600}
+              width={1280}
+              height={400}
               priority
               style={{
-                width: '200%',
+                width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: 'left 0%'
+                objectPosition: 'center 0%'
               }}
               className="block md:hidden"
+              sizes="100vw"
             />
           </div>
 
@@ -419,7 +423,7 @@ export default function Home() {
             }}
           >
             <Image
-              src="/mountains.png"
+              src="/optimized/mountains-desktop.jpg"
               alt="Mountains"
               width={1920}
               height={600}
@@ -431,21 +435,23 @@ export default function Home() {
                 objectPosition: 'center 0%'
               }}
               className="hidden md:block"
+              sizes="100vw"
             />
-            {/* Mobile: Show only left half */}
+            {/* Mobile: Use mobile-optimized version */}
             <Image
-              src="/mountains.png"
+              src="/optimized/mountains-mobile.jpg"
               alt="Mountains"
-              width={1920}
-              height={600}
+              width={1280}
+              height={400}
               priority
               style={{
-                width: '200%',
+                width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: 'left 0%'
+                objectPosition: 'center 0%'
               }}
               className="block md:hidden"
+              sizes="100vw"
             />
           </div>
 
