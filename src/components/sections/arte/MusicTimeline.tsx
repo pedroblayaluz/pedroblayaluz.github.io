@@ -23,7 +23,7 @@ const releases: Release[] = [
     monthName: 'Janeiro',
     month: 1,
     year: 2025,
-    albumArt: '/albums/sdds-orkut.jpg',
+    albumArt: '/optimized/albums/sdds-orkut-thumb.jpg',
     spotifyUrl: 'https://open.spotify.com/album/0MDgodFJyErPHRnU7A9pYj',
     youtubeUrl: 'https://www.youtube.com/@pedroluzer',
     spotifyEmbedId: '0MDgodFJyErPHRnU7A9pYj',
@@ -34,7 +34,7 @@ const releases: Release[] = [
     monthName: 'Junho',
     month: 6,
     year: 2023,
-    albumArt: '/albums/sonho-lucido.jpg',
+    albumArt: '/optimized/albums/sonho-lucido-thumb.jpg',
     spotifyUrl: 'https://open.spotify.com/album/0LfVOLHrNtITtZIJmsd7py',
     youtubeUrl: 'https://www.youtube.com/@pedroluzer',
     spotifyEmbedId: '0LfVOLHrNtITtZIJmsd7py',
@@ -45,7 +45,7 @@ const releases: Release[] = [
     monthName: 'Abril',
     month: 4,
     year: 2023,
-    albumArt: '/albums/1000-caminhos.jpg',
+    albumArt: '/optimized/albums/1000-caminhos-thumb.jpg',
     spotifyUrl: 'https://open.spotify.com/album/1Hqe0yXsACIfPb0ZyhUufn',
     youtubeUrl: 'https://www.youtube.com/@pedroluzer',
     spotifyEmbedId: '1Hqe0yXsACIfPb0ZyhUufn',
@@ -56,7 +56,7 @@ const releases: Release[] = [
     monthName: 'Setembro',
     month: 9,
     year: 2021,
-    albumArt: '/albums/ghosting.jpg',
+    albumArt: '/optimized/albums/ghosting-thumb.jpg',
     spotifyUrl: 'https://open.spotify.com/album/36XhWrkbXCrojgIBLESVMV',
     youtubeUrl: 'https://www.youtube.com/@pedroluzer',
     spotifyEmbedId: '36XhWrkbXCrojgIBLESVMV',
@@ -67,7 +67,7 @@ const releases: Release[] = [
     monthName: 'Julho',
     month: 7,
     year: 2020,
-    albumArt: '/albums/infelizes.jpg',
+    albumArt: '/optimized/albums/infelizes-thumb.jpg',
     spotifyUrl: 'https://open.spotify.com/album/1UXpCvAVmVYsSrxyeeGKw3',
     youtubeUrl: 'https://www.youtube.com/@pedroluzer',
     spotifyEmbedId: '1UXpCvAVmVYsSrxyeeGKw3',
@@ -78,7 +78,7 @@ const releases: Release[] = [
     monthName: 'Novembro',
     month: 11,
     year: 2019,
-    albumArt: '/albums/millennial.jpg',
+    albumArt: '/optimized/albums/millennial-thumb.jpg',
     spotifyUrl: 'https://open.spotify.com/album/3nMD0enYUV1bDuKgj4HLVl',
     youtubeUrl: 'https://www.youtube.com/@pedroluzer',
     spotifyEmbedId: '3nMD0enYUV1bDuKgj4HLVl',
@@ -179,7 +179,7 @@ export function MusicTimeline() {
                                 width={80}
                                 height={80}
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                priority
+                                loading="lazy"
                               />
                             </div>
 

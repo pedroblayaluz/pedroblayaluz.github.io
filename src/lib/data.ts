@@ -47,13 +47,13 @@ export const PROJECTS_DATA: Project[] = [
     id: 'criatura',
     title: 'Uma criaturinha interessante',
     description: 'Um encontro inusitado na beira do rio',
-    image: '/projetos/criatura/criatura.png',
+    image: '01',
   },
   {
     id: 'sta_marta',
     title: 'Farol de Santa Marta',
     description: 'o velho, a Kombi e a decisão de pegar a estrada',
-    image: '/projetos/sta_marta/03.jpg',
+    image: '03',
   },
 ];
 

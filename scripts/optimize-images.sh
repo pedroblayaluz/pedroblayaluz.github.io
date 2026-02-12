@@ -57,7 +57,7 @@ done
 
 # ============= PROJETOS =============
 echo ""
-echo "🎨 Otimizando projetos (600x480)..."
+echo "🎨 Otimizando projetos (240x192 thumb, 600x480 full)..."
 mkdir -p "$OPTIMIZED_DIR/projetos/criatura"
 mkdir -p "$OPTIMIZED_DIR/projetos/sta_marta"
 
@@ -75,8 +75,11 @@ for projeto in "$PROJECT_ROOT"/public/projetos/**/*.{jpg,jpeg,png}; do
         continue
     fi
     
-    # Resize para 600 (máx largura)
-    sips -Z 600 480 "$projeto" -o "$OPTIMIZED_DIR/projetos/$dir/${basename}-opt.jpg" 2>/dev/null || cp "$projeto" "$OPTIMIZED_DIR/projetos/$dir/${basename}-opt.jpg"
+    # Versão thumbnail para grid (240x192)
+    sips -Z 240 192 "$projeto" -o "$OPTIMIZED_DIR/projetos/$dir/${basename}-thumb.jpg" 2>/dev/null || cp "$projeto" "$OPTIMIZED_DIR/projetos/$dir/${basename}-thumb.jpg"
+    
+    # Versão full para modal (600x480)
+    sips -Z 600 480 "$projeto" -o "$OPTIMIZED_DIR/projetos/$dir/${basename}-full.jpg" 2>/dev/null || cp "$projeto" "$OPTIMIZED_DIR/projetos/$dir/${basename}-full.jpg"
     
     echo "  ✓ $dir/$filename"
 done
@@ -118,9 +121,11 @@ echo "   ├── poesias/"
 echo "   │   ├── {name}-thumb.jpg (350x350)"
 echo "   │   └── {name}-full.jpg (800x800)"
 echo "   ├── projetos/criatura/"
-echo "   │   └── {name}-opt.jpg (600x480)"
+echo "   │   ├── {name}-thumb.jpg (240x192)"
+echo "   │   └── {name}-full.jpg (600x480)"
 echo "   ├── projetos/sta_marta/"
-echo "   │   └── {name}-opt.jpg (600x480)"
+echo "   │   ├── {name}-thumb.jpg (240x192)"
+echo "   │   └── {name}-full.jpg (600x480)"
 echo "   ├── mountains-desktop.jpg (1920x600)"
 echo "   └── mountains-mobile.jpg (1280x400)"
 echo ""

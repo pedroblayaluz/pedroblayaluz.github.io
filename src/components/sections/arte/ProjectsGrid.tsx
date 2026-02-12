@@ -75,7 +75,7 @@ export function ProjectsGrid() {
               }}
             >
               <Image
-                src={`/optimized/projetos/${project.id}/${project.image.split('/').pop()?.replace(/\.[^.]+$/, '')}-opt.jpg`}
+                src={`/optimized/projetos/${project.id}/${project.image}-thumb.jpg`}
                 alt={project.title}
                 fill
                 style={{
@@ -83,6 +83,7 @@ export function ProjectsGrid() {
                   objectPosition: 'center center',
                 }}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                loading="lazy"
               />
               {/* Gradient overlay */}
               <div
