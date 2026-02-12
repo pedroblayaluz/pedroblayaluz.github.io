@@ -1,13 +1,15 @@
 'use client';
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaSpotify, FaYoutube, FaInstagram, FaTiktok, FaLinkedin, FaGithub } from "react-icons/fa";
 import { LightningAnimation, SnowflakesAnimation, ContentSlider } from "@/components";
 
-export default function Home() {
+export default function Landing() {
   const [showNavbar, setShowNavbar] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,32 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      
+      // Check if click is outside menu and header
+      if (
+        mobileMenuOpen &&
+        menuRef.current &&
+        headerRef.current &&
+        !menuRef.current.contains(target) &&
+        !headerRef.current.contains(target)
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   // Menu hover handlers (avoid inline complex expressions in JSX)
   const handleMenuEnter = (e: React.MouseEvent<HTMLElement>) => {
@@ -30,12 +58,12 @@ export default function Home() {
 
   return (
     <>
-      {/* Navbar - appears on scroll */}
+      {/* Navbar - ALWAYS visible and clickable */}
       <header 
-        className={`fixed top-0 left-0 right-0 h-14 bg-white flex items-center px-4 shadow-sm transition-opacity duration-300 ${
-          showNavbar ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-        style={{ fontWeight: 350, zIndex: 9999 }}
+        ref={headerRef}
+        className="fixed top-0 left-0 right-0 h-14 bg-white flex items-center px-4 shadow-sm cursor-pointer"
+        style={{ fontWeight: 350, zIndex: 99999 }}
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
         <h2 className="m-0 text-lg text-gray-900 flex items-center gap-2" style={{ fontWeight: 350 }}>
           <div className="w-5 h-5 flex-shrink-0">
@@ -51,8 +79,11 @@ export default function Home() {
 
         {/* Burger Menu Button */}
         <button
-          className="flex flex-col gap-1.5 ml-auto cursor-pointer border-0 bg-transparent p-0"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="flex flex-col gap-1.5 ml-auto cursor-pointer border-0 bg-transparent p-0 pr-2"
+          onClick={(e) => {
+            e.stopPropagation();
+            setMobileMenuOpen(!mobileMenuOpen);
+          }}
         >
           <span className={`block w-7 h-0.5 transition-all ${mobileMenuOpen ? 'translate-y-2 rotate-45' : ''}`} style={{ backgroundColor: '#a397eb' }}></span>
           <span className={`block w-7 h-0.5 transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`} style={{ backgroundColor: '#a397eb' }}></span>
@@ -60,13 +91,33 @@ export default function Home() {
         </button>
       </header>
 
+      {/* Overlay backdrop - closes menu when clicked */}
+      {mobileMenuOpen && (
+        <div 
+          style={{ 
+            position: 'fixed', 
+            top: 0, 
+            left: 0, 
+            right: 0, 
+            bottom: 0, 
+            zIndex: 99998,
+            backgroundColor: 'rgba(0,0,0,0.1)'
+          }}
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Menu */}
-      <nav className={`fixed top-14 left-0 right-0 bg-white shadow-sm transition-opacity duration-300 ${mobileMenuOpen && showNavbar ? 'block' : 'hidden'}`} style={{ zIndex: 9998 }}>
+      <nav 
+        ref={menuRef}
+        className={`fixed top-14 left-0 right-0 bg-white shadow-sm ${mobileMenuOpen ? 'block' : 'hidden'}`} 
+        style={{ zIndex: 999999 }}
+      >
         <ul className="list-none p-2 m-0 space-y-1">
-          <li><a href="#home" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave}>página inicial</a></li>
-          <li><a href="#musica" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave}>música</a></li>
-          <li><a href="#poesia" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave}>poesia</a></li>
-          <li><a href="https://blaya.ia.br" target="_blank" rel="noopener noreferrer" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave}>software</a></li>
+          <li><a href="#home" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>página inicial</a></li>
+          <li><a href="#musica" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>música</a></li>
+          <li><a href="#poesia" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>poesia</a></li>
+          <li><a href="https://blaya.ia.br" target="_blank" rel="noopener noreferrer" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>software</a></li>
         </ul>
       </nav>
 
@@ -118,7 +169,7 @@ export default function Home() {
           </div>
 
           {/* Content */}
-          <div style={{ position: 'relative', zIndex: 50 }}>
+          <div style={{ position: 'relative' }}>
             <style>{`
               .card-description {
                 margin: 0 !important;
@@ -354,7 +405,7 @@ export default function Home() {
           </div>
 
           {/* Content - relative z-index so it appears on top */}
-          <div style={{ position: 'relative', zIndex: 50 }}>
+          <div style={{ position: 'relative' }}>
             {/* Hero Section */}
             <section className="min-h-[calc(100vh-56px)] flex items-center justify-center relative overflow-hidden px-1 py-8">
               <div className="relative z-10 w-full">
@@ -408,7 +459,7 @@ export default function Home() {
           </div>
 
           {/* Content - relative z-index so it appears on top */}
-          <div style={{ position: 'relative', zIndex: 50 }}>
+          <div style={{ position: 'relative' }}>
             {/* Hero Section */}
             <section className="min-h-[calc(100vh-56px)] flex items-center justify-center relative overflow-hidden px-4 py-20">
               <div className="relative z-10 max-w-6xl mx-auto w-full">
