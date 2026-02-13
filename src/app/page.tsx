@@ -92,8 +92,6 @@ export default function Home() {
         <ul className="list-none p-2 m-0 space-y-1">
           <li><a href="#home" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>página inicial</a></li>
           <li><a href="#arte" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>arte</a></li>
-          <li><a href="#musica" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>música</a></li>
-          <li><a href="#poesia" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>poesia</a></li>
           <li><a href="https://blaya.ia.br" target="_blank" rel="noopener noreferrer" className="block px-3 py-2.5 rounded text-base cursor-pointer" style={{ color: '#6b629d', fontWeight: 350, textDecoration: 'none' }} onMouseEnter={handleMenuEnter} onMouseLeave={handleMenuLeave} onClick={() => setMobileMenuOpen(false)}>software</a></li>
         </ul>
       </nav>
