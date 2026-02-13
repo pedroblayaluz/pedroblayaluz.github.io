@@ -4,7 +4,29 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://pedroluz.com";
 
 export const defaultMetadata: Metadata = {
   title: "pedroluz",
-  description: "Música, poesia, código e histórias.",
+  description: "arte e software 🌷👾",
+  openGraph: {
+    title: "pedroluz",
+    description: "arte e software 🌷👾",
+    url: baseUrl,
+    siteName: "pedroluz",
+    images: [
+      {
+        url: `${baseUrl}/pedroluz.ico`,
+        width: 1200,
+        height: 630,
+        alt: "pedroluz",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "pedroluz",
+    description: "arte e software 🌷👾",
+    images: [`${baseUrl}/pedroluz.ico`],
+  },
 };
 
 export function createMetadata(
