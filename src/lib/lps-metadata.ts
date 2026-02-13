@@ -9,6 +9,9 @@ export interface LPMetadata {
   image: string;
   backgroundColor?: string;
   accentColor?: string;
+  monthName?: string;
+  month?: number;
+  year?: number;
 }
 
 export const lpsData: LPMetadata[] = [
@@ -22,6 +25,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: 'Z7onMZBUI7A',
     image: '/albums/sdds-orkut.jpg',
     backgroundColor: '#f7f1ff',
+    monthName: 'Janeiro',
+    month: 1,
+    year: 2025,
   },
   {
     slug: 'millennial',
@@ -33,6 +39,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: 'rGuLEts10KI',
     image: '/albums/millennial.jpg',
     backgroundColor: '#f7f1ff',
+    monthName: 'Novembro',
+    month: 11,
+    year: 2019,
   },
   {
     slug: 'sonholucido',
@@ -44,6 +53,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: 'aAVAkcR-cR0',
     image: '/albums/sonho-lucido.jpg',
     backgroundColor: '#f7f1ff',
+    monthName: 'Junho',
+    month: 6,
+    year: 2023,
   },
   {
     slug: 'sentido',
@@ -55,6 +67,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: 'EhJ9prXb0N8',
     image: '/albums/millennial.jpg', // Parte do album millennial
     backgroundColor: '#f7f1ff',
+    monthName: 'Novembro',
+    month: 11,
+    year: 2019,
   },
   {
     slug: 'meioblackmirror',
@@ -66,6 +81,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: 'B6mL1C84B4U',
     image: '/albums/millennial.jpg', // Parte do album millennial
     backgroundColor: '#f7f1ff',
+    monthName: 'Novembro',
+    month: 11,
+    year: 2019,
   },
   {
     slug: 'macacosurbanos',
@@ -77,6 +95,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: 'QTpMTBv3cj4',
     image: '/albums/millennial.jpg', // Parte do album millennial
     backgroundColor: '#f7f1ff',
+    monthName: 'Novembro',
+    month: 11,
+    year: 2019,
   },
   {
     slug: 'euacho',
@@ -88,6 +109,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: 'FeE7907bBHA',
     image: '/albums/millennial.jpg', // Parte do album millennial
     backgroundColor: '#f7f1ff',
+    monthName: 'Novembro',
+    month: 11,
+    year: 2019,
   },
   {
     slug: 'nosquereminfelizes',
@@ -99,6 +123,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: '31O2xUpBgo0',
     image: '/albums/infelizes.jpg',
     backgroundColor: '#f7f1ff',
+    monthName: 'Julho',
+    month: 7,
+    year: 2020,
   },
   {
     slug: 'ghosting',
@@ -110,6 +137,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: 'rYWLafROaSc',
     image: '/albums/ghosting.jpg',
     backgroundColor: '#f7f1ff',
+    monthName: 'Setembro',
+    month: 9,
+    year: 2021,
   },
   {
     slug: '1000caminhos',
@@ -121,6 +151,9 @@ export const lpsData: LPMetadata[] = [
     youtubeEmbedId: 'NRdQ2uLZBuo',
     image: '/albums/1000-caminhos.jpg',
     backgroundColor: '#f7f1ff',
+    monthName: 'Abril',
+    month: 4,
+    year: 2023,
   },
 ];
 

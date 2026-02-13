@@ -265,16 +265,16 @@ export default function Home() {
             <section className="px-4 md:px-8 lg:px-16 py-12 pb-20">
               <div className="max-w-2xl mx-auto">
                 <div 
-                  className="p-8 md:p-10 rounded-lg hover:shadow-xl transition-shadow duration-300"
+                  className="p-5 sm:p-8 md:p-10 rounded-lg hover:shadow-xl transition-shadow duration-300"
                   style={{
                     backgroundColor: '#ffffff',
                     boxShadow: '0 2px 8px rgba(138, 92, 255, 0.08)'
                   }}
                 >
-                  <h2 className="text-2xl mb-8 text-center" style={{ fontWeight: 350, color: '#222' }}>
+                  <h2 className="text-lg sm:text-xl md:text-2xl mb-5 sm:mb-8 text-center" style={{ fontWeight: 350, color: '#222' }}>
                     Me acompanhe
                   </h2>
-                  <div className="flex gap-6 justify-center">
+                  <div className="flex flex-wrap gap-3 sm:gap-6 justify-center">
                     {/* Spotify */}
                     <a 
                       href="https://open.spotify.com/artist/2rj8ccj3Z0rfVh18nxzZUQ" 
@@ -282,7 +282,8 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 hover:opacity-70 transition-opacity"
                     >
-                      <FaSpotify size={32} style={{ color: '#1DB954', flexShrink: 0 }} />
+                      <FaSpotify size={24} className="sm:block hidden" style={{ color: '#1DB954', flexShrink: 0 }} />
+                      <FaSpotify size={20} className="hidden max-sm:block" style={{ color: '#1DB954', flexShrink: 0 }} />
                     </a>
 
                     {/* YouTube */}
@@ -292,7 +293,8 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 hover:opacity-70 transition-opacity"
                     >
-                      <FaYoutube size={32} style={{ color: '#FF0000', flexShrink: 0 }} />
+                      <FaYoutube size={24} className="sm:block hidden" style={{ color: '#FF0000', flexShrink: 0 }} />
+                      <FaYoutube size={20} className="hidden max-sm:block" style={{ color: '#FF0000', flexShrink: 0 }} />
                     </a>
 
                     {/* Instagram */}
@@ -302,7 +304,8 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 hover:opacity-70 transition-opacity"
                     >
-                      <FaInstagram size={32} style={{ color: '#E1306C', flexShrink: 0 }} />
+                      <FaInstagram size={24} className="sm:block hidden" style={{ color: '#E1306C', flexShrink: 0 }} />
+                      <FaInstagram size={20} className="hidden max-sm:block" style={{ color: '#E1306C', flexShrink: 0 }} />
                     </a>
 
                     {/* TikTok */}
@@ -312,7 +315,8 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 hover:opacity-70 transition-opacity"
                     >
-                      <FaTiktok size={32} style={{ color: '#000000', flexShrink: 0 }} />
+                      <FaTiktok size={24} className="sm:block hidden" style={{ color: '#000000', flexShrink: 0 }} />
+                      <FaTiktok size={20} className="hidden max-sm:block" style={{ color: '#000000', flexShrink: 0 }} />
                     </a>
 
                     {/* LinkedIn */}
@@ -322,7 +326,8 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 hover:opacity-70 transition-opacity"
                     >
-                      <FaLinkedin size={32} style={{ color: '#0A66C2', flexShrink: 0 }} />
+                      <FaLinkedin size={24} className="sm:block hidden" style={{ color: '#0A66C2', flexShrink: 0 }} />
+                      <FaLinkedin size={20} className="hidden max-sm:block" style={{ color: '#0A66C2', flexShrink: 0 }} />
                     </a>
 
                     {/* GitHub */}
@@ -332,7 +337,8 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 hover:opacity-70 transition-opacity"
                     >
-                      <FaGithub size={32} style={{ color: '#333333', flexShrink: 0 }} />
+                      <FaGithub size={24} className="sm:block hidden" style={{ color: '#333333', flexShrink: 0 }} />
+                      <FaGithub size={20} className="hidden max-sm:block" style={{ color: '#333333', flexShrink: 0 }} />
                     </a>
                   </div>
                 </div>

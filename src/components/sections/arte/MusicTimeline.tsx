@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { FaSpotify, FaYoutube } from 'react-icons/fa';
+import { TIMELINE_HEADER_PLATFORMS, TIMELINE_EXPANDED_PLATFORMS } from '@/lib/platforms';
+import { StreamingCard } from '@/components/common/ui/StreamingCard';
 
 interface Release {
   id: string;
@@ -11,9 +10,6 @@ interface Release {
   month: number; // 1-12
   year: number;
   albumArt: string;
-  spotifyUrl: string;
-  youtubeUrl: string;
-  spotifyEmbedId?: string;
 }
 
 const releases: Release[] = [
@@ -24,9 +20,6 @@ const releases: Release[] = [
     month: 1,
     year: 2025,
     albumArt: '/optimized/albums/sdds-orkut-thumb.jpg',
-    spotifyUrl: 'https://open.spotify.com/album/0MDgodFJyErPHRnU7A9pYj',
-    youtubeUrl: 'https://www.youtube.com/@pedroluzer',
-    spotifyEmbedId: '0MDgodFJyErPHRnU7A9pYj',
   },
   {
     id: 'sonho-lucido',
@@ -35,9 +28,6 @@ const releases: Release[] = [
     month: 6,
     year: 2023,
     albumArt: '/optimized/albums/sonho-lucido-thumb.jpg',
-    spotifyUrl: 'https://open.spotify.com/album/0LfVOLHrNtITtZIJmsd7py',
-    youtubeUrl: 'https://www.youtube.com/@pedroluzer',
-    spotifyEmbedId: '0LfVOLHrNtITtZIJmsd7py',
   },
   {
     id: '1000-caminhos',
@@ -46,9 +36,6 @@ const releases: Release[] = [
     month: 4,
     year: 2023,
     albumArt: '/optimized/albums/1000-caminhos-thumb.jpg',
-    spotifyUrl: 'https://open.spotify.com/album/1Hqe0yXsACIfPb0ZyhUufn',
-    youtubeUrl: 'https://www.youtube.com/@pedroluzer',
-    spotifyEmbedId: '1Hqe0yXsACIfPb0ZyhUufn',
   },
   {
     id: 'ghosting',
@@ -57,9 +44,6 @@ const releases: Release[] = [
     month: 9,
     year: 2021,
     albumArt: '/optimized/albums/ghosting-thumb.jpg',
-    spotifyUrl: 'https://open.spotify.com/album/36XhWrkbXCrojgIBLESVMV',
-    youtubeUrl: 'https://www.youtube.com/@pedroluzer',
-    spotifyEmbedId: '36XhWrkbXCrojgIBLESVMV',
   },
   {
     id: 'infelizes',
@@ -68,9 +52,6 @@ const releases: Release[] = [
     month: 7,
     year: 2020,
     albumArt: '/optimized/albums/infelizes-thumb.jpg',
-    spotifyUrl: 'https://open.spotify.com/album/1UXpCvAVmVYsSrxyeeGKw3',
-    youtubeUrl: 'https://www.youtube.com/@pedroluzer',
-    spotifyEmbedId: '1UXpCvAVmVYsSrxyeeGKw3',
   },
   {
     id: 'millennial',
@@ -79,15 +60,10 @@ const releases: Release[] = [
     month: 11,
     year: 2019,
     albumArt: '/optimized/albums/millennial-thumb.jpg',
-    spotifyUrl: 'https://open.spotify.com/album/3nMD0enYUV1bDuKgj4HLVl',
-    youtubeUrl: 'https://www.youtube.com/@pedroluzer',
-    spotifyEmbedId: '3nMD0enYUV1bDuKgj4HLVl',
   },
 ];
 
 export function MusicTimeline() {
-  const [expanded, setExpanded] = useState(0);
-
   // Group releases by year
   const releasesByYear = releases.reduce((acc, release) => {
     const year = release.year;
@@ -143,98 +119,18 @@ export function MusicTimeline() {
                 {/* Releases for this year */}
                 {releasesByYear[year].map((release, idx) => {
                   const isLatest = year === years[0] && idx === 0;
-                  const globalIndex = releases.indexOf(release);
 
                   return (
                     <div key={release.id} className="relative pl-16 mb-6">
-                      {/* Card */}
-                      <button
-                        onClick={() => setExpanded(expanded === globalIndex ? -1 : globalIndex)}
-                        className="w-full text-left"
-                      >
-                        <div
-                          className="p-5 rounded-lg border-2 transition-all duration-300 hover:shadow-lg relative"
-                          style={{
-                            backgroundColor: expanded === globalIndex ? '#ffffff' : '#f9f5ff',
-                            borderColor: expanded === globalIndex ? '#a397eb' : '#d4c5f9',
-                          }}
-                        >
-                          {/* Badge "Último lançamento" */}
-                          {isLatest && (
-                            <div
-                              className="absolute -top-3 -right-0 px-3 py-1 rounded-full text-xs font-semibold text-white"
-                              style={{ backgroundColor: '#a397eb' }}
-                            >
-                              Último lançamento
-                            </div>
-                          )}
-
-                          {/* Card Header */}
-                          <div className="flex gap-4">
-                            {/* Album Art */}
-                            <div className="flex-shrink-0 w-20 h-20 rounded overflow-hidden">
-                              <Image
-                                src={release.albumArt}
-                                alt={release.title}
-                                width={80}
-                                height={80}
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                loading="lazy"
-                              />
-                            </div>
-
-                            {/* Info */}
-                            <div className="flex-1 min-w-0">
-                              <h3
-                                className="text-base font-semibold truncate"
-                                style={{ color: '#222', fontWeight: 350 }}
-                              >
-                                {release.title}
-                              </h3>
-                              <p style={{ color: '#888', fontSize: '0.85rem' }}>
-                                {release.monthName} de {release.year}
-                              </p>
-
-                              {/* Links */}
-                              <div className="flex gap-3 mt-3">
-                                <a
-                                  href={release.spotifyUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="hover:opacity-70 transition-opacity"
-                                  onClick={(e) => e.stopPropagation()}
-                                >
-                                  <FaSpotify size={16} style={{ color: '#1DB954' }} />
-                                </a>
-                                <a
-                                  href={release.youtubeUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="hover:opacity-70 transition-opacity"
-                                  onClick={(e) => e.stopPropagation()}
-                                >
-                                  <FaYoutube size={16} style={{ color: '#FF0000' }} />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Expanded Player */}
-                          {expanded === globalIndex && (
-                            <div className="mt-5 pt-5 border-t border-purple-200">
-                              <iframe
-                                src={`https://open.spotify.com/embed/album/${release.spotifyEmbedId}?utm_source=generator`}
-                                width="100%"
-                                height="152"
-                                frameBorder="0"
-                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                loading="lazy"
-                                style={{ borderRadius: '6px' }}
-                              />
-                            </div>
-                          )}
-                        </div>
-                      </button>
+                      <StreamingCard
+                        title={release.title}
+                        releaseId={release.id}
+                        headerPlatforms={TIMELINE_HEADER_PLATFORMS}
+                        expandedPlatforms={TIMELINE_EXPANDED_PLATFORMS}
+                        albumArt={release.albumArt}
+                        monthYear={`${release.monthName} de ${release.year}`}
+                        isLatest={isLatest}
+                      />
                     </div>
                   );
                 })}
