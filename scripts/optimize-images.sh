@@ -70,8 +70,8 @@ for projeto in "$PROJECT_ROOT"/public/projetos/**/*.{jpg,jpeg,png}; do
     basename="${filename%.*}"
     dir=$(dirname "$projeto" | xargs basename)
     
-    # Skip .png files (provavelmente logos)
-    if [ "$extension" = "png" ]; then
+    # Skip .png files unless it's criatura.png
+    if [ "$extension" = "png" ] && [ "$basename" != "criatura" ]; then
         echo "  ⊘ $filename (PNG preservado)"
         continue
     fi

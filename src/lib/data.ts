@@ -47,7 +47,7 @@ export const PROJECTS_DATA: Project[] = [
     id: 'criatura',
     title: 'Uma criaturinha interessante',
     description: 'Um encontro inusitado na beira do rio',
-    image: '01',
+    image: 'criatura',
   },
   {
     id: 'sta_marta',
