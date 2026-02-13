@@ -113,7 +113,7 @@ export default function Home() {
             }}
           >
             <Image
-              src="/optimized/mountains-desktop.jpg"
+              src="/optimized/mountains-desktop.png"
               alt="Mountains"
               width={1920}
               height={600}
@@ -129,7 +129,7 @@ export default function Home() {
             />
             {/* Mobile: Use mobile-optimized version */}
             <Image
-              src="/optimized/mountains-mobile.jpg"
+              src="/optimized/mountains-mobile.png"
               alt="Mountains"
               width={1280}
               height={400}
@@ -357,7 +357,7 @@ export default function Home() {
             }}
           >
             <Image
-              src="/optimized/mountains-desktop.jpg"
+              src="/optimized/mountains-desktop.png\"
               alt="Mountains"
               width={1920}
               height={600}
@@ -373,7 +373,7 @@ export default function Home() {
             />
             {/* Mobile: Use mobile-optimized version */}
             <Image
-              src="/optimized/mountains-mobile.jpg"
+              src="/optimized/mountains-mobile.png"
               alt="Mountains"
               width={1280}
               height={400}
@@ -427,7 +427,7 @@ export default function Home() {
             }}
           >
             <Image
-              src="/optimized/mountains-desktop.jpg"
+              src="/optimized/mountains-desktop.png"
               alt="Mountains"
               width={1920}
               height={600}
@@ -443,7 +443,7 @@ export default function Home() {
             />
             {/* Mobile: Use mobile-optimized version */}
             <Image
-              src="/optimized/mountains-mobile.jpg"
+              src="/optimized/mountains-mobile.png"
               alt="Mountains"
               width={1280}
               height={400}

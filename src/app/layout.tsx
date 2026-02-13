@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "pedroluz",
     images: [
       {
-        url: "/optimized/mountains-desktop.jpg",
+        url: "/optimized/mountains-desktop-social.jpg",
         width: 1200,
         height: 630,
         alt: "Mountains",

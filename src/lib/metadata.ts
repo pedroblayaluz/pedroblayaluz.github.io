@@ -12,7 +12,7 @@ export const defaultMetadata: Metadata = {
     siteName: "pedroluz",
     images: [
       {
-        url: `${baseUrl}/optimized/mountains-desktop.jpg`,
+        url: `${baseUrl}/optimized/mountains-desktop-social.jpg`,
         width: 1200,
         height: 630,
         alt: "Mountains",

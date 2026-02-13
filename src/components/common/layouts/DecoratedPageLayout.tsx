@@ -49,7 +49,7 @@ export function DecoratedPageLayout({
           }}
         >
           <Image
-            src="/optimized/mountains-desktop.jpg"
+            src="/optimized/mountains-desktop.png"
             alt="Mountains"
             width={1920}
             height={600}
