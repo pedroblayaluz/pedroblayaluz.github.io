@@ -20,18 +20,29 @@ export function PoetryGrid() {
 
   return (
     <>
+      <style>{`
+        .poetry-grid {
+          display: grid;
+          gap: ${STYLES.spacing.sm};
+          padding: ${STYLES.spacing.xl} ${STYLES.spacing.xs};
+          margin: 0 auto;
+          max-width: 600px;
+          box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+          .poetry-grid {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          }
+        }
+        @media (min-width: 769px) {
+          .poetry-grid {
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+          }
+        }
+      `}</style>
+      
       {/* Grid de poesias */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
-          gap: STYLES.spacing.sm,
-          padding: `${STYLES.spacing.xl} ${STYLES.spacing.xs}`,
-          margin: '0 auto',
-          maxWidth: '600px',
-          boxSizing: 'border-box',
-        }}
-      >
+      <div className="poetry-grid">
         {POETRY_DATA.map((poetry, index) => {
           const poetryName = poetry.filename.replace(/\.[^.]+$/, '');
           const isGif = poetry.filename.toLowerCase().endsWith('.gif');
