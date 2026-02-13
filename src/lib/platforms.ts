@@ -30,13 +30,13 @@ export const platforms: Record<string, Platform> = {
     name: 'Amazon Music',
     icon: FaAmazon,
     color: '#FF9900',
-    getUrl: () => 'https://www.amazonmusic.com/artists/B08NMJDH25',
+    getUrl: () => 'https://music.amazon.com/artists/B07RKDK84Z',
   },
   deezer: {
     name: 'Deezer',
     icon: FaDeezer,
     color: '#FF0080',
-    getUrl: () => 'https://www.deezer.com/artist/6089502',
+    getUrl: () => 'https://www.deezer.com/artist/64785202',
   },
 };
 
