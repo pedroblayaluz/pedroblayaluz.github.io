@@ -29,12 +29,12 @@ export function PoetryGrid() {
           max-width: 600px;
           box-sizing: border-box;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 400px) {
           .poetry-grid {
             grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
           }
         }
-        @media (min-width: 769px) {
+        @media (min-width: 401px) {
           .poetry-grid {
             grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
           }
