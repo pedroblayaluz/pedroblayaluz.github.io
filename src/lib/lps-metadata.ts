@@ -7,6 +7,7 @@ export interface LPMetadata {
   spotifyType: 'track' | 'album';
   youtubeEmbedId: string;
   image: string;
+  optimizedImage: string;
   backgroundColor?: string;
   accentColor?: string;
 }
@@ -21,6 +22,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'track',
     youtubeEmbedId: 'Z7onMZBUI7A',
     image: '/albums/sdds-orkut.jpg',
+    optimizedImage: '/optimized/albums/sdds-orkut-full.jpg',
     backgroundColor: '#f7f1ff',
   },
   {
@@ -32,6 +34,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'album',
     youtubeEmbedId: 'rGuLEts10KI',
     image: '/albums/millennial.jpg',
+    optimizedImage: '/optimized/albums/millennial-full.jpg',
     backgroundColor: '#f7f1ff',
   },
   {
@@ -43,6 +46,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'track',
     youtubeEmbedId: 'aAVAkcR-cR0',
     image: '/albums/sonho-lucido.jpg',
+    optimizedImage: '/optimized/albums/sonho-lucido-full.jpg',
     backgroundColor: '#f7f1ff',
   },
   {
@@ -54,6 +58,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'track',
     youtubeEmbedId: 'EhJ9prXb0N8',
     image: '/albums/millennial.jpg', // Parte do album millennial
+    optimizedImage: '/optimized/albums/millennial-full.jpg',
     backgroundColor: '#f7f1ff',
   },
   {
@@ -65,6 +70,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'track',
     youtubeEmbedId: 'B6mL1C84B4U',
     image: '/albums/millennial.jpg', // Parte do album millennial
+    optimizedImage: '/optimized/albums/millennial-full.jpg',
     backgroundColor: '#f7f1ff',
   },
   {
@@ -76,6 +82,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'track',
     youtubeEmbedId: 'QTpMTBv3cj4',
     image: '/albums/millennial.jpg', // Parte do album millennial
+    optimizedImage: '/optimized/albums/millennial-full.jpg',
     backgroundColor: '#f7f1ff',
   },
   {
@@ -87,6 +94,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'track',
     youtubeEmbedId: 'FeE7907bBHA',
     image: '/albums/millennial.jpg', // Parte do album millennial
+    optimizedImage: '/optimized/albums/millennial-full.jpg',
     backgroundColor: '#f7f1ff',
   },
   {
@@ -98,6 +106,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'track',
     youtubeEmbedId: '31O2xUpBgo0',
     image: '/albums/infelizes.jpg',
+    optimizedImage: '/optimized/albums/infelizes-full.jpg',
     backgroundColor: '#f7f1ff',
   },
   {
@@ -109,6 +118,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'track',
     youtubeEmbedId: 'rYWLafROaSc',
     image: '/albums/ghosting.jpg',
+    optimizedImage: '/optimized/albums/ghosting-full.jpg',
     backgroundColor: '#f7f1ff',
   },
   {
@@ -120,6 +130,7 @@ export const lpsData: LPMetadata[] = [
     spotifyType: 'track',
     youtubeEmbedId: 'NRdQ2uLZBuo',
     image: '/albums/1000-caminhos.jpg',
+    optimizedImage: '/optimized/albums/1000-caminhos-full.jpg',
     backgroundColor: '#f7f1ff',
   },
 ];

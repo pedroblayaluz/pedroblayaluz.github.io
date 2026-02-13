@@ -27,7 +27,7 @@ export function LPPage({ lp }: LPPageProps) {
               {/* Album Image */}
               <div style={{ marginBottom: '30px', borderRadius: '12px', overflow: 'hidden', height: '300px', position: 'relative' }}>
                 <Image
-                  src={`/optimized/albums/${lp.slug}-full.jpg`}
+                  src={lp.optimizedImage}
                   alt={lp.title}
                   fill
                   style={{ objectFit: 'cover' }}
