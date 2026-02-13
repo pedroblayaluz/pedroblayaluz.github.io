@@ -146,9 +146,11 @@ ContentSlider.Track = function Track() {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '2rem',
+          gap: '1rem',
           marginBottom: '2rem',
           position: 'relative',
+          padding: '0 0.5rem',
+          boxSizing: 'border-box',
         }}
       >
         {SLIDER_POSITIONS.map((position, index) => (
@@ -161,7 +163,7 @@ ContentSlider.Track = function Track() {
               onMouseDown={handleMouseDown}
               style={{
                 width: '100%',
-                padding: STYLES.spacing.sm + ' ' + STYLES.spacing.md,
+                padding: STYLES.spacing.xs + ' ' + STYLES.spacing.xs,
                 borderRadius: STYLES.borderRadius.small,
                 border: 'none',
                 cursor: 'pointer',
@@ -169,7 +171,7 @@ ContentSlider.Track = function Track() {
                 backgroundColor: selectedIndex === index ? '#ffffff' : STYLES.colors.backgrounds.light,
                 color: selectedIndex === index ? '#1a1a1a' : STYLES.colors.text.tertiary,
                 fontWeight: 500,
-                fontSize: '0.875rem',
+                fontSize: '0.75rem',
                 fontFamily: 'Arial, Helvetica, sans-serif',
                 textTransform: 'lowercase',
                 display: 'flex',

@@ -348,7 +348,7 @@ export default function Home() {
         </div>
 
         {/* SECTION 2: Arte / Main Content */}
-        <div id="arte" className="min-h-screen text-gray-900 relative overflow-x-hidden" style={{ backgroundColor: '#f7f1ff', scrollMarginTop: '3.5rem' }}>
+        <div id="arte" className="min-h-screen text-gray-900 relative md:overflow-x-hidden" style={{ backgroundColor: '#f7f1ff', scrollMarginTop: '3.5rem' }}>
           {/* Mountains Background - Fixed */}
           <div 
             className="fixed bottom-0 left-0 right-0 pointer-events-none"
@@ -418,7 +418,7 @@ export default function Home() {
         </div>
 
         {/* SECTION 3: Poesia */}
-        <div id="poesia" className="text-gray-900 relative overflow-x-hidden" style={{ backgroundColor: '#f7f1ff', scrollMarginTop: '3.5rem' }}>
+        <div id="poesia" className="text-gray-900 relative md:overflow-x-hidden" style={{ backgroundColor: '#f7f1ff', scrollMarginTop: '3.5rem' }}>
           {/* Mountains Background - Fixed */}
           <div 
             className="fixed bottom-0 left-0 right-0 pointer-events-none"

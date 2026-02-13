@@ -26,9 +26,10 @@ export function PoetryGrid() {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
           gap: STYLES.spacing.sm,
-          padding: `${STYLES.spacing.xl} ${STYLES.spacing.sm}`,
+          padding: `${STYLES.spacing.xl} ${STYLES.spacing.xs}`,
           margin: '0 auto',
           maxWidth: '600px',
+          boxSizing: 'border-box',
         }}
       >
         {POETRY_DATA.map((poetry, index) => {

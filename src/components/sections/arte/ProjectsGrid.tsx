@@ -40,11 +40,13 @@ export function ProjectsGrid() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: STYLES.spacing['2xl'],
-          padding: `${STYLES.spacing.xl} ${STYLES.spacing.lg}`,
+          gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+          gap: STYLES.spacing.lg,
+          padding: `${STYLES.spacing.xl} ${STYLES.spacing.xs}`,
           margin: '0 auto',
           maxWidth: '1200px',
+          boxSizing: 'border-box',
+          width: '100%',
         }}
       >
         {PROJECTS_DATA.map((project) => (
