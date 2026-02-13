@@ -4,29 +4,29 @@ import { LayoutWrapper } from "@/components/common/layouts";
 
 export const metadata: Metadata = {
   title: "pedroluz",
-  description: "Música, poesia, código e histórias.",
-  metadataBase: new URL('https://pedroluz.com'),
+  description: "arte e software 🌷👾",
+  metadataBase: new URL('https://pedroluz.com.br'),
   openGraph: {
     title: "pedroluz",
-    description: "Música, poesia, código e histórias.",
-    url: "https://pedroluz.com",
+    description: "arte e software 🌷👾",
+    url: "https://pedroluz.com.br",
     siteName: "pedroluz",
     images: [
       {
-        url: "/pedroluz.ico",
-        width: 256,
-        height: 256,
-        alt: "pedroluz",
+        url: "/optimized/mountains-desktop.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mountains",
       },
     ],
     locale: "pt_BR",
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "pedroluz",
-    description: "Música, poesia, código e histórias.",
-    images: ["/pedroluz.ico"],
+    description: "arte e software 🌷👾",
+    images: ["/optimized/mountains-desktop.jpg"],
   },
 };
 
