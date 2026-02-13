@@ -18,16 +18,17 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Mountains",
       },
+      {
+        url: "/pedroluz.ico",
+        width: 512,
+        height: 512,
+        alt: "pedroluz",
+      },
     ],
     locale: "pt_BR",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "pedroluz",
-    description: "arte e software 🌷👾",
-    images: ["/optimized/mountains-desktop.jpg"],
-  },
+
 };
 
 export default function RootLayout({
